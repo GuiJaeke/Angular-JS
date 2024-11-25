@@ -1,0 +1,39 @@
+<div class="class">
+    <div class="base">
+
+        <div class="monitor">
+            <p *ngIf="num2 == ''">{{num}}</p>
+            <p>{{num2}}</p>
+            <p *ngIf="resultString != 0">{{resultString}}</p>
+        </div>
+        <div class="buttons">
+    
+            <div class="row">
+                <button (click)="number('1')">1</button>
+                <button (click)="number('2')">2</button>
+                <button (click)="number('3')">3</button>
+                <button (click)="soma()">+</button>
+                <button (click)="mult()">X</button>
+            </div>
+            <div class="row">
+                <button (click)="number('4')">4</button>
+                <button (click)="number('5')">5</button>
+                <button (click)="number('6')">6</button>
+                <button (click)="sub()">-</button>
+                <button (click)="div()">/</button>
+            </div>
+            <div class="row">
+                <button (click)="number('7')">7</button>
+                <button (click)="number('8')">8</button>
+                <button (click)="number('9')">9</button>
+                <button (click)="number('0')">0</button>
+                <button (click)="result()">=</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
