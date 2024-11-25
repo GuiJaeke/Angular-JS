@@ -9,6 +9,9 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { IfRenderComponent } from './components/if-render/if-render.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { TesteCalcComponent } from './components/teste-calc/teste-calc.component';
+import { EmitterComponent } from './components/emitter/emitter.component';
+import { ChangeNumberComponent } from './components/change-number/change-number.component';
+import { ListRenderComponent } from './components/list-render/list-render.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { TesteCalcComponent } from './components/teste-calc/teste-calc.component
     DirectivesComponent,
     IfRenderComponent,
     EventosComponent,
-    TesteCalcComponent
+    TesteCalcComponent,
+    EmitterComponent,
+    ChangeNumberComponent,
+    ListRenderComponent
   ],
   imports: [
     BrowserModule,
