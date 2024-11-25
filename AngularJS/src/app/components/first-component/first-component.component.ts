@@ -15,4 +15,5 @@ export class FirstComponentComponent {
     nome: 'biribim',
     local: 'biribal'
   }
+  
 }

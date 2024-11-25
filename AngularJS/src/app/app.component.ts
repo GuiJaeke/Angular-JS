@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  userName = "dedex";
+  array = {
+    top: 'aqui é top',
+    demais: 'isso é demais'
+  }
   title = 'AngularJS';
 }
