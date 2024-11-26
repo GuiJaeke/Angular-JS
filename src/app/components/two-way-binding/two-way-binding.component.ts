@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './two-way-binding.component.css'
 })
 export class TwoWayBindingComponent {
-
+  name: string = '';
 }

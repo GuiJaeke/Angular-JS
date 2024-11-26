@@ -1,3 +1,10 @@
-<div class="clas">
-    <h2>tw-way-binding </h2>
+<div class="class">
+    <h2>tow-way-binding </h2>
+    <form action="">
+        <input type="text" [(ngModel)]="name" name="name" placeholder="nome">
+        <input type="submit" value="enviar">
+    </form>
+    <div *ngIf="name != ''">
+        o nome é: {{ name }}
+    </div>
 </div>
