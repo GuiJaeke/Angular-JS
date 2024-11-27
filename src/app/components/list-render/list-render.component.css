@@ -1,3 +1,10 @@
 li {
+    border: 1px solid white;
+    padding: 30px;
+    width: 400px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 20px;
     font-size: 25px;
+    list-style: none;
 }

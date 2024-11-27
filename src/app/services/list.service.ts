@@ -8,17 +8,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
+import { Resolve } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
-export class ListService {
-  private apiUrl = 'http://192.168.3.53:3000/'
+export class ListService{
+  private apiUrl = 'http://localhost:3000/'
 
   constructor(private http: HttpClient) { }
 
-  remove(animals: Animal[], animal: Animal) {
+  remove(id: number) {
     console.log('ativando service');
-    return animals.filter((a) => animal.name !== a.name)
+    return this.http.get<User>(`${this.apiUrl}delete/${id}`)
     
   }
   getAll(): Observable<Animal[]> {
@@ -26,5 +28,13 @@ export class ListService {
   }
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}home`);
+  }
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}user/${id}`);
+  }
+  insertUser(form:{}) {
+    const data = form
+    
+    return this.http.post(`${this.apiUrl}users/create`, data)
   }
 }

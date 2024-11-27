@@ -4,16 +4,20 @@
         <li *ngFor="let animal of animals">
             nome: {{animal.name}} - tipo: {{animal.type}}
             <button (click)="showAge(animal)">show age</button>
-            <button (click)="removeAnimal(animal)">excluir</button>
+            
         </li>
     </ul>
     <h3>{{animalDetails}}</h3>
     <h2>Usuarios</h2>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="nome">
+    <button (click)="filter(name)">Filtrar</button>
+    <h2>{{name}}</h2>
     <ul>
         <li *ngFor="let user of users">
+            <a routerLink="/list/{{user.id}}">Pagina de usuario</a>
             nome: {{user.name}} - ocupação: {{user.occupation}}
             <p *ngIf="user.occupation">Aceita envio de Emails</p>
-
+            <button (click)="removeUser(user)">excluir</button>
         </li>
     </ul>
 </div>
