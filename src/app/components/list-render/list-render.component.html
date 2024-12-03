@@ -1,23 +1,28 @@
 <div class="class">
-    <h2>Animais</h2>
-    <ul>
-        <li *ngFor="let animal of animals">
-            nome: {{animal.name}} - tipo: {{animal.type}}
-            <button (click)="showAge(animal)">show age</button>
-            
-        </li>
-    </ul>
-    <h3>{{animalDetails}}</h3>
-    <h2>Usuarios</h2>
-    <input type="text" [(ngModel)]="name" name="name" placeholder="nome">
-    <button (click)="filter(name)">Filtrar</button>
-    <h2>{{name}}</h2>
-    <ul>
-        <li *ngFor="let user of users">
-            <a routerLink="/list/{{user.id}}">Pagina de usuario</a>
-            nome: {{user.name}} - ocupação: {{user.occupation}}
-            <p *ngIf="user.occupation">Aceita envio de Emails</p>
-            <button (click)="removeUser(user)">excluir</button>
-        </li>
-    </ul>
+    <h2 class="titulo">Animais</h2>
+<ul class="lista">
+    <li class="item" *ngFor="let animal of animals">
+        <p><strong>Nome:</strong> {{animal.name}}</p>
+        <p><strong>Tipo:</strong> {{animal.type}}</p>
+        <button class="botao" (click)="showAge(animal)">Mostrar Idade</button>
+    </li>
+</ul>
+<h3 class="detalhes">{{animalDetails}}</h3>
+
+<h2 class="titulo">Usuários</h2>
+<div class="filtro">
+    <input class="input" type="text" [(ngModel)]="name" name="name" placeholder="Digite um nome...">
+    <button class="botao" (click)="filter(name)">Filtrar</button>
+</div>
+<h3 class="filtro-resultado">{{name}}</h3>
+
+<ul class="lista">
+    <li class="item" *ngFor="let user of users">
+        <p><strong>Nome:</strong> {{user.name}}</p>
+        <p><strong>Ocupação:</strong> {{user.occupation || 'Não informada'}}</p>
+        <p *ngIf="user.newsletter" class="email-info">✔ Aceita envio de Emails</p>
+        <a class="link" routerLink="/list/{{user.id}}">Ver Página do Usuário</a>
+        <button class="botao excluir" (click)="removeUser(user)">Excluir</button>
+    </li>
+</ul>
 </div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +15,13 @@ export class AppComponent {
     demais: 'isso é demais'
   }
   title = 'AngularJS';
+
+  constructor (private authService: AuthService, private router: Router) {
+
+  }
+
+  sair() {
+    this.authService.logout()
+    this.router.navigate(['/login']);
+  }
 }

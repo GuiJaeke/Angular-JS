@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding-bottom: 500px;
     color: grey;
+    font-family: Helvetica;
 }
 .class {
     border-bottom: 1px solid red;

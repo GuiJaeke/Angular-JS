@@ -38,6 +38,7 @@ export class ListRenderComponent {
   }
   async getUsers() { this.listService.getAllUsers().subscribe({next: async (user) => { 
    this.users = user
+   
   }})}
 
   getAnimals(): void {

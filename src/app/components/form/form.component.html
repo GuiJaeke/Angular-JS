@@ -1,32 +1,36 @@
-<div class="form">
+<div class="form-container">
+  <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <h2 class="form-titulo">Cadastro de Usuário</h2>
     
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div>
-          <label for="name">Nome:</label>
-          <input id="name" formControlName="name" />
+    <div class="form-group">
+      <label for="name" class="form-label">Nome:</label>
+      <input id="name" class="form-input" formControlName="name" placeholder="Digite seu nome" />
+    </div>
 
-        </div>
-      
-        <div>
-          <label for="occupation">Ocupação:</label>
-          <input id="occupation" formControlName="occupation" type="text" />
-          
-        </div>
-      
-        <div>
-          <label for="newsletter">Deseja receber noticias</label>
-          <input type="checkbox" id="newsletter" formControlName="newsletter">
-        </div>
-      
-        <button type="submit" [disabled]="formulario.invalid">Enviar</button>
-      </form>
+    <div class="form-group">
+      <label for="occupation" class="form-label">Ocupação:</label>
+      <input id="occupation" class="form-input" formControlName="occupation" type="text" placeholder="Digite sua ocupação" />
+    </div>
+
+    <div class="form-group checkbox-group">
+      <label for="newsletter" class="form-label checkbox-label">
+        <input type="checkbox" id="newsletter" formControlName="newsletter" />
+        Deseja receber notícias
+      </label>
+    </div>
+
+    <button type="submit" class="form-button" [disabled]="formulario.invalid">Enviar</button>
+  </form>
 </div>
 
-<div *ngIf="userCreate">
-  <h1>Usuário criado com sucesso!</h1>
-  <li >
-    <a routerLink="/list/{{userCreate?.id}}">Pagina de usuario</a>
-    nome: {{userCreate?.name}} - ocupação: {{userCreate?.occupation}}
-    <p *ngIf="userCreate?.occupation">Aceita envio de Emails</p>
-</li>
+<div class="user-info" *ngIf="userCreate">
+  <h1 class="success-message">Usuário criado com sucesso!</h1>
+  <ul class="user-details">
+    <li class="user-item">
+      <a class="user-link" routerLink="/list/{{userCreate?.id}}">Página do Usuário</a>
+      <p><strong>Nome:</strong> {{userCreate?.name}}</p>
+      <p><strong>Ocupação:</strong> {{userCreate?.occupation}}</p>
+      <p *ngIf="userCreate?.occupation" class="email-info">✔ Aceita envio de Emails</p>
+    </li>
+  </ul>
 </div>

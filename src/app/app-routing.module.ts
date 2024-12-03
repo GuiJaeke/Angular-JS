@@ -5,13 +5,16 @@ import { ListRenderComponent } from './components/list-render/list-render.compon
 import { TesteCalcComponent } from './components/teste-calc/teste-calc.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { FormComponent } from './components/form/form.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: FirstComponentComponent},
-  {path: 'list', component: ListRenderComponent},
-  {path: 'calculadora', component:TesteCalcComponent},
-  {path: 'list/:id', component:ItemDetailComponent},
-  {path: 'form', component:FormComponent}
+  {path: '', component: FirstComponentComponent, canActivate: [AuthGuard]},
+  {path: 'list', component: ListRenderComponent, canActivate: [AuthGuard]},
+  {path: 'calculadora', component:TesteCalcComponent, canActivate: [AuthGuard]},
+  {path: 'list/:id', component:ItemDetailComponent, canActivate: [AuthGuard]},
+  {path: 'form', component:FormComponent, canActivate: [AuthGuard]},
+  {path: 'login', component:LoginComponent}
 ];
 
 @NgModule({

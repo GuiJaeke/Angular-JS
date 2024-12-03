@@ -1,11 +1,10 @@
-<h1 style="text-align: center;">tela principal</h1>
-<nav>
-    <a routerLink="/">home</a>
-    <br>
-    <a routerLink="/list">list</a>
-    <br>
-    <a routerLink="/calculadora">calculadora</a>
-    <br>
-    <a routerLink="/form">formulario</a>
+<h1 class="titulo-principal">Tela Principal</h1>
+<nav class="menu">
+    <a class="menu-link" routerLink="/">Home</a>
+    <a class="menu-link" routerLink="/list">Lista</a>
+    <a class="menu-link" routerLink="/form">Formulário</a>
+    <a class="menu-link" routerLink="/calculadora">Calculadora</a>
+    <a class="menu-link" routerLink="/login">login</a>
+    <button class="menu-link" (click)="sair()">sair</button>
 </nav>
 <router-outlet></router-outlet>
